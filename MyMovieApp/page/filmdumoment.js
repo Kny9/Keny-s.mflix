@@ -36,7 +36,10 @@ const fildumoment = ({ navigation }) => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        onChangeText={searchMovies}
+        onChangeText={(text) => {
+          setSearchQuery(text);
+          searchMovies(text);
+        }}
         value={searchQuery}
         placeholder="recherche..."
       />
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   movieTitle: {
-    color: '#000000',
+    color: '#FFFFFF',
     fontSize: 19,
     textAlign: 'center',
     fontWeight: 'bold',
@@ -136,6 +139,7 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     margin: 12,
+    borderRadius: 10,
     borderWidth: 1,
     padding: 10,
   },
