@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { StyleSheet, ImageBackground, Text, View, Button, Animated } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
@@ -17,13 +17,13 @@ const HomeScreen = ({ navigation }) => {
         }
         return nextProgress;
       });
-    }, 300);z
+    }, 300);
   };
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <Text style={styles.text}>Keny_mtr sur snap !</Text>
+        <Text style={styles.text}>Keny's.mflix </Text>
         <Button
           title="Listes de films"
           color="#923829"

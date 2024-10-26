@@ -1,14 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, Text, FlatList, movies, Image, image } from 'react-native';
+import { StyleSheet, View, Text, Image, ImageBackground } from 'react-native';
 
-const DetailScreen = ({ route, navigation }) => {
+const DetailScreen = ({ route}) => {
   const { title, img, overview, releaseDate } = route.params;
-  const image = { uri: 'https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials.jpg' };
+  const image = { uri: 'https://www.mairie-millas.fr/wp-content/uploads/2024/04/submit_1920x1080-1.jpg' };
 
 
 
   return (
   <View style={styles.container}>
+    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
     <View style={styles.card}>
       <Image 
         source={{ uri: `https://image.tmdb.org/t/p/w500${img}` }}
@@ -16,9 +17,10 @@ const DetailScreen = ({ route, navigation }) => {
       />
       <Text style={styles.movieTitle}>{title}</Text>
       <Text style={styles.overview}>{overview}</Text>
-      <Text style={styles.release_date}>{releaseDate}</Text>
+      <Text style={styles.release_date}> date de sortie : {releaseDate}</Text>
 
     </View>   
+    </ImageBackground>
   </View>
 );
 }
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
   card: {
     width: 250,
     borderWidth: 2,
-    borderColor: "#E4571F",
+    borderColor: "#000000",
     borderRadius: 10,
     margin: 79,
     padding: 10,

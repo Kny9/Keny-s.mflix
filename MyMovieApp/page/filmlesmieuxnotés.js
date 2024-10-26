@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ImageBackground, Text, FlatList, View, Image, TouchableOpacity, TextInput, Button } from 'react-native';
-import { Searchbar } from 'react-native-paper';
 
 const ilmlesmieuxnotés = ({ navigation }) => {
   const API_KEY = '0e4f595e21df030ae208acbc86a5a227';
   const API_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=fr-FR`;
   const [movies, setMovies] = useState([]);
-  const image = { uri: 'https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials.jpg' };
+  const image = { uri: 'https://media.istockphoto.com/id/1472539099/fr/vectoriel/dégradé-de-couleurs-éclatantes-sur-fond-noir-bannière-abstraite-violet-bleu-bleu-bleu.jpg?s=612x612&w=0&k=20&c=5EVQIk4-daNS2sKlbbUhVOmLwXREMbsaB_TfiU88njY=' };
 
   const [searchQuery, setSearchQuery] = useState('');
   const searchMovies = (query) => {
@@ -39,7 +38,7 @@ const ilmlesmieuxnotés = ({ navigation }) => {
         style={styles.input}
         onChangeText={searchMovies}
         value={searchQuery}
-        placeholder="Keny_mtr sur insta"
+        placeholder="recherche..."
       />
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <FlatList
@@ -78,14 +77,14 @@ const ilmlesmieuxnotés = ({ navigation }) => {
           }}
         />
                 <Button
-          title="Listes a venir"
+          title="Film a venir"
           color="#923829"
           onPress={() => {
              navigation.navigate('Liste film a venir')
           }}
         />
                 <Button
-          title="Listes du moment"
+          title="Film du moment"
           color="#923829"
           onPress={() => {
              navigation.navigate('Liste film du moment')

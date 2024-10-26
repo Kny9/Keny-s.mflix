@@ -36,7 +36,10 @@ const ListedeFilms = ({ navigation }) => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        onChangeText={searchMovies}
+        onChangeText={(text) => {
+          setSearchQuery(text);
+          searchMovies(text);
+        }}
         value={searchQuery}
         placeholder="recherche..."
       />
@@ -77,14 +80,14 @@ const ListedeFilms = ({ navigation }) => {
           }}
         />
                 <Button
-          title="Listes du moment"
+          title="Film du moment"
           color="#923829"
           onPress={() => {
              navigation.navigate('Liste film du moment')
           }}
         />
                 <Button
-          title="Listes les mieux notés"
+          title="Film les mieux notés"
           color="#923829"
           onPress={() => {
              navigation.navigate('Liste film les mieux notés')
@@ -137,7 +140,9 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderWidth: 1,
+    borderRadius: 10,
     padding: 10,
+    
   },
   title: {
     height: 100,
