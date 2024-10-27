@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
   ChargementBarContainer: {
     height: 20,
     width: '80%',
-    backgroundColor: '#ddd',
-    borderRadius: 10,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 100,
     overflow: 'hidden',
     marginTop: 20,
   },
