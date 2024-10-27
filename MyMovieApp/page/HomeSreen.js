@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { StyleSheet, ImageBackground, Text, View, Button, Animated } from 'react-native';
+import { StyleSheet, ImageBackground, Text, View, Button} from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   const [progress, setProgress] = useState(0);
