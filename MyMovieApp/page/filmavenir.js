@@ -64,9 +64,8 @@ const filmavenir = ({ navigation }) => {
                   style={styles.poster}
                 />
               </TouchableOpacity>
-              <Text style={styles.movieTitle}>{item.title}</Text>
               <Text style={[styles.vote_average, { color: getVoteAverageColor(item.vote_average) }]}>
-                {item.vote_average}
+              note: {item.vote_average.toFixed(1)}/10
               </Text>
             </View>
           )} 

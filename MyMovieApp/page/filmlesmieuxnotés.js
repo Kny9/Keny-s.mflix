@@ -9,7 +9,7 @@ const ilmlesmieuxnotés = ({ navigation }) => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const searchMovies = (query) => {
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`)
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&language=fr-FR`)
      .then(response => response.json())
      .then(data => setMovies(data.results))
      .catch(error => console.error(error));
@@ -64,9 +64,8 @@ const ilmlesmieuxnotés = ({ navigation }) => {
                   style={styles.poster}
                 />
               </TouchableOpacity>
-              <Text style={styles.movieTitle}>{item.title}</Text>
               <Text style={[styles.vote_average, { color: getVoteAverageColor(item.vote_average) }]}>
-                {item.vote_average}
+              note: {item.vote_average.toFixed(1)}/10
               </Text>
             </View>
           )} 

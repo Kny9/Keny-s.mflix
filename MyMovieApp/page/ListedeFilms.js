@@ -41,7 +41,7 @@ const ListedeFilms = ({ navigation }) => {
           searchMovies(text);
         }}
         value={searchQuery}
-        placeholder="recherche..."
+        placeholder=" recherche..."
       />
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <FlatList
@@ -66,7 +66,7 @@ const ListedeFilms = ({ navigation }) => {
               </TouchableOpacity>
               <Text style={styles.movieTitle}>{item.title}</Text>
               <Text style={[styles.vote_average, { color: getVoteAverageColor(item.vote_average) }]}>
-                note: {item.vote_average.toFixed(1)}/10
+                note: {item.vote_average}/10
               </Text>
             </View>
           )} 
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 250,
-    height: 450,
+    height: 470,
     borderWidth: 2,
     borderColor: "#E4571F",
     borderRadius: 10,
@@ -141,8 +141,6 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     borderRadius: 10,
-    padding: 10,
-    
   },
   title: {
     height: 100,
