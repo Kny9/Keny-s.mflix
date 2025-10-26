@@ -66,7 +66,7 @@ const ListedeFilms = ({ navigation }) => {
               </TouchableOpacity>
               <Text style={styles.movieTitle}>{item.title}</Text>
               <Text style={[styles.vote_average, { color: getVoteAverageColor(item.vote_average) }]}>
-                note: {item.vote_average}/10
+              note: {item.vote_average.toFixed(1)}/10
               </Text>
             </View>
           )} 
